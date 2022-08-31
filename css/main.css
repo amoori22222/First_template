@@ -57,19 +57,13 @@ header .navigation {
     position: relative;
 }
 
-header .navigation:hover .icon span:nth-child(2){
-    width: 100%;
-}
-
 header .navigation .icon {
     width: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content:flex-end;
-    position: absolute;
-    top: 30%;
-    right: 0; 
 }
+
 header .navigation .icon span {
     background-color: black;
     margin-bottom: 5px;
@@ -87,20 +81,51 @@ header .navigation .icon span:last-child {
     width: 100%;
 }
 
+header .navigation:hover .icon span:nth-child(2){
+    width: 100%;
+}
+
 .navigation ul {
+    background-color: rgb(186, 186, 186);
     list-style: none;
-    /* display:none; */
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 20px);
+    min-width: 200px;
+    display: none;
 }
 
-/* .navigation ul:hover {
-    display: inline;
-} */
-.navigation ul li a{
+.navigation:hover ul {
+    display: block;
+}
+
+.navigation ul::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent rgb(186, 186, 186) transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 15px;
     text-decoration: none;
-    color: aqua;
+    color: #333;
+    transition: 0.3s;
 }
 
+.navigation ul li a:hover {
+    padding-left: 25px;
+}
 
+.navigation ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+}
 /* End Header customization */
 
 /* Start Main Section Customization */
